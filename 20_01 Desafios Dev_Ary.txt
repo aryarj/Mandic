@@ -1,0 +1,230 @@
+
+# Desafios Dev
+
+# Primeiro desafio, em Python
+'''
+p=float(input('Digite o peso da pessoa em quilos, utilizando PONTO para separar as casas decimais \n'))
+h=float(input('Digite a altura da pessoa em metros, utilizando PONTO para separar as casas decimais \n'))
+imc=p/h**2
+print('O IMC dessa pessoa é de',imc,' kg/m2, o que significa que ela está na condição de:\n')
+# condicionais
+if(imc<16):
+  print('subpeso severo')
+elif(imc>=16 and imc<20):
+  print('subpeso')
+elif(imc>=20 and imc<25):
+  print('peso normal')
+elif(imc>=25 and imc<30):
+  print('sobrepeso')
+elif(imc>=30 and imc<40):
+  print('obesidade')
+else:
+  print('obsidade morbida')
+  
+'''
+
+# Segundo desafio, em Python
+
+#Importanto a biblioteca socket
+import socket
+
+# definindo sites que dificilmente estão 'fora do ar'
+confiaveis = ['www.google.com', 'www.yahoo.com', 'www.bb.com.br']
+
+# estabelecendo um 'loop' infinito para verificar a conexão continuamente,
+# assim, a única forma de parar esse programa é fechando-o ou interrompendo-o
+count=3
+while count>0: 
+      def check_host():
+          global confiaveis
+          for host in confiaveis:
+            a=socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+            a.settimeout(.5)
+            try:
+              b=a.connect_ex((host, 80))
+              if b==0: #ok, conectado
+                return True
+            except:
+              pass
+            a.close()
+          return False
+      print (check_host() and "Conexão Ativa" or "Conexão Inativa")
+
+# referência:
+# Baseado em:
+# PythonBrasil. ChecarConexaoComInternet
+#Disponível em <https://wiki.python.org.br/ChecarConexaoComInternet>;
+#acesso em 29 de janeiro de 2020.
+'''
+'''
+#Terceiro desafio, em Python
+
+# entrada da palavra ou da sentença a ser traduzida
+# e já a deixando em minúsculas
+word=input("Digite uma palavra ou uma sentença qualquer para ser traduzida\n").lower()
+
+# definição do vetor para armazenar as letras
+w=[]
+# definição do vetor para armazenar os números
+n=[]
+
+# examinando as componentes do array word2
+for i in word:
+  if(i=='c' i=='ç'):
+ # realiza a tradução das letras
+    i=i.replace(i,'3')
+#armazena as letras no array 'w'
+    w.append(i)
+  elif(i=='f'):
+    i=i.replace(i,'6')
+    w.append(i)
+  elif(i=='i' or i=='í'):
+    i=i.replace(i,'9')
+    w.append(i)
+  elif(i=='l'):
+    i=i.replace(i,'12')
+    w.append(i)
+  elif(i=='o' or i=='ó' or i=='ô'):
+    i=i.replace(i,'15')
+    w.append(i)
+  elif(i=='r'):
+    i=i.replace(i,'18')
+    w.append(i)
+  elif(i=='u' or i=='ú'):
+    i=i.replace(i,'21')
+    w.append(i)
+  elif(i=='x'):
+    i=i.replace(i,'24')
+    w.append(i)
+  # armazena os numeros no array 'n'
+  elif(i=='0' or i=='1'or i=='2' or i=='3' or i=='4'
+  or i=='5' or i=='6' or i=='7' or i=='8' or i=='9'):
+    n.append(i)
+  else:
+ #armazena as letras que não serão traduzidas no array 'w'
+    w.append(i)
+
+# Juntando as letras
+seperator = ''
+wcomplete=(seperator.join(w))
+print('Tradução:')
+print(wcomplete)
+
+'''
+'''
+Quarto desafio, em Python
+
+# entrada da palavra ou da sentença a ser escrita em arte ASCII arte
+word=input("Digite uma palavra ou uma sentença qualquer para ser transformada em arte ASCII\n").lower()
+
+# examinando as componentes do array word
+for i in word:
+  if(i=='a' or i=='à' or i=='á' or i=='ã'):
+    print('')
+    print(' /\ ')
+    print('/~~\ ')
+  elif(i=='b'):
+    print(' __ ')
+    print('|__) ')
+    print('|__) ') 
+  elif(i=='c'):
+    print(' __ ')
+    print('/  ` ')
+    print('\__, ') 
+  elif(i=='d'):
+    print(' __ ')
+    print('|  \ ')
+    print('|__/') 
+  elif(i=='e'or i=='é' or i=='ê'):
+    print(' ___ ')
+    print('|__   ')
+    print('|___ ')
+  elif(i=='f'):
+    print(' ___ ')
+    print('|__   ')
+    print('|') 
+  elif(i=='g'):
+    print(' __  ')
+    print('/ _` ')
+    print('\__>') 
+  elif(i=='h'):
+    print('   ')
+    print('|__| ')
+    print('|  |') 
+  elif(i=='i' or i=='í'):
+    print('   ')
+    print(' | ')
+    print(' |') 
+  elif(i=='j'):
+    print('   ')
+    print('   | ')
+    print('\__/') 
+  elif(i=='k'):
+    print('   ')
+    print('|__/  ')
+    print('|  \ ' ) 
+  elif(i=='l'):
+    print('   ')
+    print('|  ')
+    print('|___') 
+  elif(i=='m'):
+    print('   ')
+    print('|\/|')
+    print('|  |') 
+  elif(i=='n'):
+    print('   ')
+    print('|\ | ')
+    print('| \|') 
+  elif(i=='o' or i=='ó' or i=='ô' or i=='õ'):
+    print(' __ ')
+    print('/  \ ')
+    print('\__/') 
+  elif(i=='p'):
+    print(' __ ')
+    print('|__) ')
+    print('|   ') 
+  elif(i=='q'):
+    print(' __ ')
+    print('/  \ ')
+    print('\__X') 
+  elif(i=='r'):
+    print(' __ ')
+    print('|__)')
+    print('|  \ ')
+  elif(i=='s'):
+    print(' __ ')
+    print('/__`')
+    print('.__/ ') 
+  elif(i=='t'):
+    print('___')
+    print(' |  ')
+    print(' |  ') 
+  elif(i=='u' or i=='ú'):
+    print(' ')
+    print('|  | ')
+    print('\__/  ') 
+  elif(i=='v'):
+    print(' ')
+    print('\  /  ')
+    print(' \/  ') 
+  elif(i=='w'):
+    print(' ')
+    print('|  | ')
+    print('|/\| ')
+  elif(i=='x'):
+    print(' ')
+    print('\_/  ')
+    print('/ \ ') 
+  elif(i=='y'):
+    print(' ')
+    print('\ /  ')
+    print(' |  ') 
+  elif(i=='z'):
+    print('__ ')
+    print(' /')
+    print('/_   ') 
+  else:
+    print('')
+    print('')
+
+'''
